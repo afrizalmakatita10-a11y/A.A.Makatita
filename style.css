@@ -1,4 +1,47 @@
-/* Add this to your existing style.css */
+/* Color Palette & Variables */
+:root {
+    --bg-color: #0A1128; /* Deep Navy */
+    --surface-color: #1A2238; /* Lighter Slate */
+    --text-main: #F4F4F9;
+    --text-muted: #9CA3AF;
+    --accent-color: #00E5FF; /* Electric Blue / Teal */
+}
+
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Custom Cursor */
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-color);
+}
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 2px solid var(--accent-color);
+}
+.cursor-dot, .cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
 
 /* Two-Column Layout */
 .layout-container {
@@ -13,7 +56,7 @@
     background-color: var(--surface-color);
     padding: 3rem;
     height: 100vh;
-    overflow-y: auto; /* Allows scrolling on small screens if needed */
+    overflow-y: auto;
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
@@ -34,10 +77,24 @@
     border: 2px solid var(--accent-color);
 }
 
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent-color);
+}
+
 .slogan {
     font-size: 1.4rem;
     line-height: 1.3;
     font-weight: 600;
+}
+
+.accent-text {
+    color: var(--accent-color);
 }
 
 .about-me {
@@ -70,6 +127,24 @@
     margin-bottom: 1rem;
 }
 
+.resume-btn {
+    background: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.resume-btn:hover {
+    background: var(--accent-color);
+    color: var(--bg-color);
+}
+
 /* Right Scrollable Panel */
 .right-panel {
     height: 100vh;
@@ -78,11 +153,144 @@
     background-color: var(--bg-color);
 }
 
-/* Hide scrollbar for cleaner look */
 .right-panel::-webkit-scrollbar {
     display: none;
 }
 .right-panel {
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+/* Tabbed Filtering Hub */
+.projects h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.filter-tabs {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.tab {
+    background: var(--surface-color);
+    color: var(--text-main);
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.tab:hover, .tab.active {
+    background: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Project Cards */
+.project-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.project-card {
+    background-color: var(--surface-color);
+    border: 1px solid rgba(0, 229, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(0, 229, 255, 0.3);
+}
+
+.project-card h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+/* Bullet Points */
+.project-bullets {
+    list-style-type: none;
+    margin-bottom: 1.5rem;
+}
+
+.project-bullets li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.project-bullets li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.project-bullets strong {
+    color: var(--text-main);
+}
+
+/* Skill Pills */
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.pill {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.filter-pill {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tool-pill {
+    background-color: rgba(0, 229, 255, 0.1);
+    color: var(--accent-color);
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
 }
