@@ -61,3 +61,18 @@ tabs.forEach(tab => {
         });
     });
 });
+
+// Theme Toggle Logic
+const themeToggle = document.querySelector('.theme-toggle');
+const body = document.body;
+
+themeToggle.addEventListener('click', () => {
+    body.classList.toggle('light-mode');
+    
+    // Switch the icon
+    if (body.classList.contains('light-mode')) {
+        themeToggle.textContent = '🌙'; // Shows Moon when in Light Mode
+    } else {
+        themeToggle.textContent = '☀️'; // Shows Sun when in Dark Mode
+    }
+});
