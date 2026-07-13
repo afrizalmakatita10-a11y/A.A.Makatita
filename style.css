@@ -46,7 +46,7 @@ body {
 /* Two-Column Layout */
 .layout-container {
     display: grid;
-    grid-template-columns: 35% 65%;
+    grid-template-columns: 50% 50%; /* This forces the perfect 50:50 split */
     height: 100vh;
     overflow: hidden;
 }
