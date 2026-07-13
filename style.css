@@ -43,10 +43,10 @@ body {
     pointer-events: none;
 }
 
-/* Two-Column Layout (Adjusted for better balance) */
+/* Two-Column Layout (Reverted to original) */
 .layout-container {
     display: grid;
-    grid-template-columns: 40% 60%;
+    grid-template-columns: 35% 65%;
     height: 100vh;
     overflow: hidden;
 }
@@ -69,10 +69,10 @@ body {
     align-items: flex-start;
 }
 
-/* Updated Photo Size */
+/* Photo Reverted to 120px */
 .profile-img {
-    width: 240px;
-    height: 240px;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--accent-color);
@@ -111,7 +111,6 @@ body {
     margin-top: 1rem;
 }
 
-/* Updated Icons and Links */
 .contact-link, .social-icon {
     display: flex;
     align-items: center;
@@ -132,7 +131,6 @@ body {
     margin-bottom: 1rem;
 }
 
-/* Updated Resume Button */
 .resume-btn {
     display: flex;
     justify-content: center;
@@ -316,6 +314,6 @@ body {
         overflow-y: visible;
     }
     .cursor-dot, .cursor-outline {
-        display: none; /* Turns off cursor on touch screens/small screens */
+        display: none; 
     }
 }
