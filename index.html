@@ -1,3 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Afrizal Makatita | Legal & Data Analytics</title>
+    <link rel="stylesheet" href="style.css">
+</head>
 <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
@@ -6,9 +14,6 @@
         <aside class="left-panel">
             <div class="profile-header">
                 <img src="profile-photo.jpg" alt="Afrizal Makatita" class="profile-img">
-                <div class="theme-toggle-container">
-                    <button class="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
-                </div>
             </div>
 
             <h1 class="logo">Afrizal <span>Makatita</span></h1>
@@ -33,6 +38,10 @@
         </aside>
 
         <main class="right-panel">
+            <div class="right-header" style="display: flex; justify-content: flex-end; margin-bottom: 2rem;">
+                <button class="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
+            </div>
+
             <section id="project-hub" class="projects">
                 <h2>Explore My Work</h2>
                 
@@ -45,7 +54,53 @@
                 </div>
 
                 <div class="project-grid">
-                    <p style="color: var(--text-muted); text-align: center; padding: 2rem;">Project cards loading...</p>
+
+                    <article class="project-card" data-category="business general">
+                        <div class="project-content">
+                            <h3>Shopee TH eCommerce Performance Analysis</h3>
+                            <ul class="project-bullets">
+                                <li>Investigated a 20% revenue leakage (over ฿800 Million) driven by order cancellations to identify baseline trends and high-density risk segments.</li>
+                                <li>Performed end-to-end data preparation using <strong>Python</strong> (handling missing values, duplicates, and type standardization) and visualized findings in a <strong>Tableau</strong> dashboard.</li>
+                                <li>Formulated actionable recommendations, including value-based retaining triggers and standardized monitoring, aiming to reduce cancellation losses to 10% by 2028.</li>
+                            </ul>
+                            
+                            <div class="skill-pills">
+                                <span class="pill filter-pill">Business / Ops Analyst</span>
+                                <span class="pill filter-pill">General Data Analyst</span>
+                                <span class="pill tool-pill">Python</span>
+                                <span class="pill tool-pill">Tableau</span>
+                                <span class="pill tool-pill">Data Cleaning</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="Shopee_TH_Presentation.pdf" target="_blank" class="btn-primary">View Presentation</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-category="business general">
+                        <div class="project-content">
+                            <h3>TheLook eCommerce Performance & Retention</h3>
+                            <ul class="project-bullets">
+                                <li>Evaluated the impact of budget optimization on inventory levels, diagnosing a system-wide inventory drop exceeding 50% across all categories.</li>
+                                <li>Developed advanced SQL queries utilizing CTEs and Window Functions in <strong>BigQuery</strong> to calculate monthly inventory growth and trace customer purchase lifecycles.</li>
+                                <li>Constructed a user cohort matrix in <strong>Spreadsheets</strong> and applied the BCG Matrix framework to highlight critical gaps between high customer demand and low stock.</li>
+                            </ul>
+                            
+                            <div class="skill-pills">
+                                <span class="pill filter-pill">Business / Ops Analyst</span>
+                                <span class="pill filter-pill">General Data Analyst</span>
+                                <span class="pill tool-pill">SQL (BigQuery)</span>
+                                <span class="pill tool-pill">Spreadsheets</span>
+                                <span class="pill tool-pill">Cohort Analysis</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="TheLook_Presentation.pdf" target="_blank" class="btn-primary">View Presentation</a>
+                            </div>
+                        </div>
+                    </article>
+
                 </div>
             </section>
         </main>
@@ -53,3 +108,4 @@
 
     <script src="script.js"></script>
 </body>
+</html>
