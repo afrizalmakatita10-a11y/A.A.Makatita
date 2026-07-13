@@ -1,38 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Legal & Data Analytics Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-</head>
 <body>
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
 
-    <header>
-        <div class="logo">Data<span>Juris</span></div>
-        <nav>
-            <button class="resume-btn">Download Resume</button>
-            <button class="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button> </nav>
-    </header>
-
-    <section class="hero">
-        <h1>Bridging the Gap Between <br><span class="accent-text">Legal Compliance</span> and <span class="accent-text">Data Strategy</span></h1>
-        <p>Transforming complex datasets into actionable, compliant business intelligence.</p>
-    </section>
-
-    <section id="project-hub" class="projects">
-        <h2>Explore My Work</h2>
-        
-        <div class="filter-tabs">
-            <button class="tab active" data-filter="all">All</button>
-            <button class="tab" data-filter="legal">Legal Data Analyst</button> <button class="tab" data-filter="business">Business / Ops Analyst</button> <button class="tab" data-filter="governance">Data Gov & Privacy</button> <button class="tab" data-filter="general">General Data Analyst</button> </div>
-
-        <div class="project-grid">
+    <div class="layout-container">
+        <aside class="left-panel">
+            <div class="profile-header">
+                <img src="profile-photo.jpg" alt="Afrizal Makatita" class="profile-img">
+                <div class="theme-toggle-container">
+                    <button class="theme-toggle" aria-label="Toggle Dark/Light Mode">🌙</button>
+                </div>
             </div>
-    </section>
+
+            <h1 class="logo">Afrizal <span>Makatita</span></h1>
+            
+            <h2 class="slogan">Bridging the Gap Between <br><span class="accent-text">Legal Compliance</span> and <span class="accent-text">Data Strategy</span></h2>
+            
+            <p class="about-me">
+                An aspiring Data Analyst with a unique legal background, leveraging structured logical reasoning and a meticulous eye for detail to drive data-backed solutions. Recently completed a rigorous Full-Stack Data Analytics program, gaining hands-on experience through end-to-end projects. My technical foundation in SQL, Spreadsheets, Tableau, and Python allows me to support comprehensive data analytics processes.
+            </p>
+
+            <div class="contact-card">
+                <a href="mailto:afrizalmakatita10@gmail.com" class="contact-link">📧 afrizalmakatita10@gmail.com</a>
+                <a href="https://wa.me/6282248432935" class="contact-link" target="_blank">📱 +62 822-4843-2935</a>
+            </div>
+
+            <div class="social-links">
+                <a href="https://linkedin.com/in/Afrizal-Makatita" target="_blank" class="social-icon">LinkedIn</a>
+                <a href="https://github.com/afrizalmakatita10-a11y" target="_blank" class="social-icon">GitHub</a>
+            </div>
+
+            <a href="#" class="resume-btn" download>Download CV</a>
+        </aside>
+
+        <main class="right-panel">
+            <section id="project-hub" class="projects">
+                <h2>Explore My Work</h2>
+                
+                <div class="filter-tabs">
+                    <button class="tab active" data-filter="all">All</button>
+                    <button class="tab" data-filter="legal">Legal Data Analyst</button>
+                    <button class="tab" data-filter="business">Business / Ops Analyst</button>
+                    <button class="tab" data-filter="governance">Data Gov & Privacy</button>
+                    <button class="tab" data-filter="general">General Data Analyst</button>
+                </div>
+
+                <div class="project-grid">
+                    <p style="color: var(--text-muted); text-align: center; padding: 2rem;">Project cards loading...</p>
+                </div>
+            </section>
+        </main>
+    </div>
 
     <script src="script.js"></script>
 </body>
-</html>
