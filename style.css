@@ -228,4 +228,94 @@ body {
     border-color: rgba(0, 229, 255, 0.3);
 }
 
-.project-card
+.project-card h3 {
+    font-size: 1.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+/* Bullet Points */
+.project-bullets {
+    list-style-type: none;
+    margin-bottom: 1.5rem;
+}
+
+.project-bullets li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+.project-bullets li::before {
+    content: "▹";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+.project-bullets strong {
+    color: var(--text-main);
+}
+
+/* Skill Pills */
+.skill-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.pill {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.filter-pill {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: var(--text-main);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tool-pill {
+    background-color: rgba(0, 229, 255, 0.1);
+    color: var(--accent-color);
+}
+
+/* Buttons */
+.btn-primary {
+    display: inline-block;
+    background-color: transparent;
+    color: var(--accent-color);
+    border: 1px solid var(--accent-color);
+    padding: 0.6rem 1.5rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+}
+
+/* Responsive Safety Net for Smaller Screens */
+@media (max-width: 1024px) {
+    .layout-container {
+        grid-template-columns: 1fr;
+        overflow-y: auto;
+    }
+    .left-panel, .right-panel {
+        height: auto;
+        overflow-y: visible;
+    }
+    .cursor-dot, .cursor-outline {
+        display: none; /* Turns off cursor on touch screens/small screens */
+    }
+}
