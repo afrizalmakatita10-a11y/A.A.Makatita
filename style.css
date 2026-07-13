@@ -147,6 +147,21 @@ body {
     font-weight: 500;
 }
 
+/* NEW: Contact Section & CTA Styling */
+.contact-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.cta-text {
+    font-size: 1.1rem; /* Same size as the header */
+    color: var(--text-muted); /* Same color as About Me */
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
 .contact-card {
     display: flex;
     flex-direction: column;
