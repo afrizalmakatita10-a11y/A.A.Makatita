@@ -1,4 +1,4 @@
-// Custom Cursor Tracker Script 
+// Custom Cursor Tracker Script
 const cursorDot = document.querySelector(".cursor-dot");
 const cursorOutline = document.querySelector(".cursor-outline");
 
@@ -29,5 +29,35 @@ links.forEach(link => {
     link.addEventListener("mouseleave", () => {
         cursorOutline.style.transform = "translate(-50%, -50%) scale(1)";
         cursorOutline.style.backgroundColor = "transparent";
+    });
+});
+
+// Tab Filtering Logic
+const tabs = document.querySelectorAll('.tab');
+const projectCards = document.querySelectorAll('.project-card');
+
+tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+        // Remove active class from all tabs
+        tabs.forEach(t => t.classList.remove('active'));
+        // Add active class to clicked tab
+        tab.classList.add('active');
+
+        const filterValue = tab.getAttribute('data-filter');
+
+        projectCards.forEach(card => {
+            // If the filter is 'all', show everything
+            if (filterValue === 'all') {
+                card.style.display = 'block';
+            } else {
+                // Check if the card's data-category includes the filter value
+                const categories = card.getAttribute('data-category').split(' ');
+                if (categories.includes(filterValue)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        });
     });
 });
