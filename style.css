@@ -7,9 +7,10 @@
     --text-muted: #9CA3AF;
     --accent-color: #00E5FF;
     
-    /* NEW: Soft Skill Colors for Dark Mode */
+    /* Soft Skill Colors for Dark Mode (Purple) */
     --accent-soft: #B388FF; 
     --accent-soft-bg: rgba(179, 136, 255, 0.1);
+    --accent-soft-border: rgba(179, 136, 255, 0.2);
 }
 
 .light-mode {
@@ -20,9 +21,10 @@
     --text-muted: #636E72;
     --accent-color: #0984E3;
     
-    /* NEW: Soft Skill Colors for Light Mode */
-    --accent-soft: #6C5CE7; 
-    --accent-soft-bg: rgba(108, 92, 231, 0.1);
+    /* Soft Skill Colors for Light Mode (Warm Coral) */
+    --accent-soft: #E17055; 
+    --accent-soft-bg: rgba(225, 112, 85, 0.1);
+    --accent-soft-border: rgba(225, 112, 85, 0.3);
 }
 
 /* Apply variables to elements */
@@ -399,8 +401,8 @@ body {
 .soft-pill {
     background-color: var(--accent-soft-bg);
     color: var(--accent-soft);
-    /* Adding a subtle border for extra crispness */
-    border: 1px solid rgba(179, 136, 255, 0.2); 
+    border: 1px solid var(--accent-soft-border);
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
 }
 
 /* Ensure light mode border looks clean too */
