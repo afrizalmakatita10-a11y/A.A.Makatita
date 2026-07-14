@@ -1,28 +1,28 @@
 /* ==========================================
-   PURE MONOCHROME PROFESSIONAL THEME
+   HIGH-CONTRAST GRAYSCALE THEME
    ========================================== */
 :root {
-    /* Core Layout Colors */
-    --bg-color: #121212;          /* Deep gray/black canvas */
-    --surface-color: #1A1A1A;     /* Slightly lighter charcoal for panels/cards */
-    --text-main: #E0E0E0;         /* Soft off-white for primary readability */
-    --text-muted: #8C8C8C;        /* Medium gray for secondary text */
-    --accent-color: #F5F5F5;      /* Pure light gray/white for emphasis */
+    /* Core Layout Colors - Balanced Light/Dark Grays */
+    --bg-color: #2D2D30;          /* Medium-dark cool gray background */
+    --surface-color: #1E1E1E;     /* Deep charcoal for panels/cards to pop out */
+    --text-main: #F5F5F5;         /* Crisp off-white for primary text */
+    --text-muted: #B0B0B0;        /* Light silver for secondary text */
+    --accent-color: #FFFFFF;      /* Pure white for emphasis */
     
-    /* 1. Filter Pills (Roles) - Bright Gray */
-    --pill-filter-text: #D4D4D4;
-    --pill-filter-bg: rgba(212, 212, 212, 0.08);
-    --pill-filter-border: rgba(212, 212, 212, 0.25);
+    /* 1. Filter Pills (Roles) - Light Silver */
+    --pill-filter-text: #E0E0E0;
+    --pill-filter-bg: rgba(224, 224, 224, 0.1);
+    --pill-filter-border: rgba(224, 224, 224, 0.4);
 
-    /* 2. Tool Pills (Hard Skills) - Mid Gray */
-    --pill-tool-text: #A3A3A3;
-    --pill-tool-bg: rgba(163, 163, 163, 0.08);
-    --pill-tool-border: rgba(163, 163, 163, 0.25);
+    /* 2. Tool Pills (Hard Skills) - Medium Ash */
+    --pill-tool-text: #C0C0C0;
+    --pill-tool-bg: rgba(192, 192, 192, 0.1);
+    --pill-tool-border: rgba(192, 192, 192, 0.4);
 
-    /* 3. Soft Skill Pills - Darker Gray */
-    --pill-soft-text: #7A7A7A;
-    --pill-soft-bg: rgba(122, 122, 122, 0.08);
-    --pill-soft-border: rgba(122, 122, 122, 0.25);
+    /* 3. Soft Skill Pills - Darker Ash */
+    --pill-soft-text: #9E9E9E;
+    --pill-soft-bg: rgba(158, 158, 158, 0.1);
+    --pill-soft-border: rgba(158, 158, 158, 0.4);
 }
 
 /* Reset & Base Styles */
@@ -59,7 +59,9 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.05); /* Extremely subtle separator */
+    border-right: 1px solid rgba(255, 255, 255, 0.1); /* Slightly more visible separator */
+    box-shadow: 5px 0 15px rgba(0,0,0,0.2); /* Adds depth so panel separates from background */
+    z-index: 10;
 }
 
 /* Hide scrollbar for a cleaner look */
@@ -82,7 +84,7 @@ body {
     height: 240px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid rgba(255, 255, 255, 0.15); /* Muted gray ring */
+    border: 3px solid #E0E0E0; /* Solid crisp border */
 }
 
 .logo {
@@ -92,7 +94,7 @@ body {
 }
 
 .logo span {
-    color: var(--accent-color);
+    color: var(--text-muted);
 }
 
 .slogan {
@@ -124,7 +126,7 @@ body {
     color: var(--text-main);
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
     padding-bottom: 0.5rem;
 }
 
@@ -185,29 +187,33 @@ body {
 }
 
 .contact-card a:hover {
-    color: var(--text-main);
+    color: var(--accent-color);
 }
 
 .contact-card i {
     width: 20px;
 }
 
+/* FIXED BUTTON STYLE */
 .btn-primary {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: transparent;
-    color: var(--text-main);
+    background-color: #333333; /* Solid dark gray box */
+    color: var(--accent-color); /* White text */
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.2); /* Muted gray border */
+    border: 1px solid #555555; /* Visible border */
     border-radius: 6px;
     font-weight: 600;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
     text-align: center;
+    cursor: pointer;
 }
 
 .btn-primary:hover {
-    background-color: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.5);
+    background-color: #E0E0E0; /* Flips to light gray on hover */
+    color: #121212; /* Dark text on hover */
+    border-color: #E0E0E0;
+    transform: translateY(-2px); /* Slight lift */
 }
 
 /* ==========================================
@@ -240,7 +246,8 @@ body {
     background-color: var(--surface-color);
     padding: 1.5rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
 .filter-group {
@@ -262,7 +269,7 @@ body {
 .filter-dropdown {
     background-color: var(--bg-color);
     color: var(--text-main);
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Soft gray dropdown border */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Stronger visible border */
     padding: 0.75rem 1rem;
     border-radius: 6px;
     font-family: inherit;
@@ -273,12 +280,12 @@ body {
 }
 
 .filter-dropdown:focus {
-    border-color: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.05);
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
 }
 
 .filter-dropdown option {
-    background-color: var(--bg-color);
+    background-color: var(--surface-color);
     color: var(--text-main);
 }
 
@@ -291,15 +298,17 @@ body {
 
 .project-card {
     background-color: var(--surface-color);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 12px;
     padding: 2rem;
-    transition: transform 0.3s, border-color 0.3s;
+    transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15); /* Adds depth to cards */
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2); /* Slight brightening on hover */
+    border-color: rgba(255, 255, 255, 0.4); 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
 }
 
 .project-card h3 {
@@ -370,7 +379,8 @@ body {
     .left-panel {
         height: auto;
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: none;
     }
     
     .right-panel {
