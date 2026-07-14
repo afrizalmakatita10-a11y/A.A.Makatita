@@ -1,16 +1,26 @@
 /* Themes */
 :root {
     /* Grayish Professional Mode */
-    --bg-color: #121212;          /* Deep gray background */
-    --surface-color: #1E1E1E;     /* Slightly lighter gray for cards */
-    --text-main: #E0E0E0;         /* Soft off-white for high readability */
-    --text-muted: #9E9E9E;        /* Medium gray for secondary text */
-    --accent-color: #4A90E2;      /* Professional corporate blue (No longer neon) */
+    --bg-color: #121212;          
+    --surface-color: #1E1E1E;     
+    --text-main: #E0E0E0;         
+    --text-muted: #9E9E9E;        
+    --accent-color: #4A90E2;      /* Corporate blue */
     
-    /* Soft Skill Colors */
-    --accent-soft: #7986CB;       /* Muted professional indigo */
-    --accent-soft-bg: rgba(121, 134, 203, 0.1);
-    --accent-soft-border: rgba(121, 134, 203, 0.3);
+    /* 1. Filter Pills (Roles) - Muted Teal */
+    --pill-filter-text: #4DB6AC;
+    --pill-filter-bg: rgba(77, 182, 172, 0.1);
+    --pill-filter-border: rgba(77, 182, 172, 0.3);
+
+    /* 2. Tool Pills (Hard Skills) - Slate Blue */
+    --pill-tool-text: #64B5F6;
+    --pill-tool-bg: rgba(100, 181, 246, 0.1);
+    --pill-tool-border: rgba(100, 181, 246, 0.3);
+
+    /* 3. Soft Skill Pills - Muted Indigo */
+    --pill-soft-text: #9FA8DA;
+    --pill-soft-bg: rgba(159, 168, 218, 0.1);
+    --pill-soft-border: rgba(159, 168, 218, 0.3);
 }
 
 /* IMPORTANT: Delete the entire .light-mode { ... } block. 
