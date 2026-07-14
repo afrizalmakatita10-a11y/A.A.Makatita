@@ -1,4 +1,3 @@
-/* Color Palette & Variables */
 /* Themes */
 :root {
     /* Dark Mode (Default) */
@@ -7,6 +6,10 @@
     --text-main: #F4F4F9;
     --text-muted: #9CA3AF;
     --accent-color: #00E5FF;
+    
+    /* NEW: Soft Skill Colors for Dark Mode */
+    --accent-soft: #B388FF; 
+    --accent-soft-bg: rgba(179, 136, 255, 0.1);
 }
 
 .light-mode {
@@ -16,6 +19,10 @@
     --text-main: #2D3436;
     --text-muted: #636E72;
     --accent-color: #0984E3;
+    
+    /* NEW: Soft Skill Colors for Light Mode */
+    --accent-soft: #6C5CE7; 
+    --accent-soft-bg: rgba(108, 92, 231, 0.1);
 }
 
 /* Apply variables to elements */
@@ -372,6 +379,33 @@ body {
 .tool-pill {
     background-color: rgba(0, 229, 255, 0.1);
     color: var(--accent-color);
+}
+
+/* NEW: Skills Section & Soft Pills Styling */
+.skills-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin: 1rem 0;
+}
+
+.skill-category h4 {
+    font-size: 0.9rem;
+    color: var(--text-main);
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.soft-pill {
+    background-color: var(--accent-soft-bg);
+    color: var(--accent-soft);
+    /* Adding a subtle border for extra crispness */
+    border: 1px solid rgba(179, 136, 255, 0.2); 
+}
+
+/* Ensure light mode border looks clean too */
+.light-mode .soft-pill {
+    border: 1px solid rgba(108, 92, 231, 0.2);
 }
 
 /* Buttons */
