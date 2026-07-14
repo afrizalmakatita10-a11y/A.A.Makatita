@@ -1,4 +1,6 @@
-// Custom Cursor Tracker Script
+// ==========================================
+// 1. Custom Cursor Tracker Script
+// ==========================================
 const cursorDot = document.querySelector(".cursor-dot");
 const cursorOutline = document.querySelector(".cursor-outline");
 
@@ -17,48 +19,49 @@ window.addEventListener("mousemove", function (e) {
     }, { duration: 500, fill: "forwards" });
 });
 
-// Expand cursor on clickable elements
-const links = document.querySelectorAll("button, a, .tab");
+// Expand cursor on clickable elements (Buttons, Links, and Dropdowns)
+const interactables = document.querySelectorAll("button, a, select");
 
-links.forEach(link => {
-    link.addEventListener("mouseenter", () => {
+interactables.forEach(item => {
+    item.addEventListener("mouseenter", () => {
         cursorOutline.style.transform = "translate(-50%, -50%) scale(1.5)";
         cursorOutline.style.backgroundColor = "rgba(0, 229, 255, 0.1)";
     });
     
-    link.addEventListener("mouseleave", () => {
+    item.addEventListener("mouseleave", () => {
         cursorOutline.style.transform = "translate(-50%, -50%) scale(1)";
         cursorOutline.style.backgroundColor = "transparent";
     });
 });
 
-// Tab Filtering Logic
-const tabs = document.querySelectorAll('.tab');
-const projectCards = document.querySelectorAll('.project-card');
-
-// Multi-Dropdown Filtering Logic
+// ==========================================
+// 2. Multi-Dropdown Filtering Engine
+// ==========================================
 const fieldFilter = document.getElementById('field-filter');
 const hardSkillFilter = document.getElementById('hard-skill-filter');
 const softSkillFilter = document.getElementById('soft-skill-filter');
-const projectCards = document.querySelectorAll('.project-card');
+
+// DECLARED ONLY ONCE to prevent script crash
+const projectCards = document.querySelectorAll('.project-card'); 
 
 function filterProjects() {
-    const fieldVal = fieldFilter.value.toLowerCase();
-    const hardVal = hardSkillFilter.value.toLowerCase();
-    const softVal = softSkillFilter.value.toLowerCase();
+    // Get the current selected values from all 3 dropdowns
+    const fieldVal = fieldFilter ? fieldFilter.value.toLowerCase() : 'all';
+    const hardVal = hardSkillFilter ? hardSkillFilter.value.toLowerCase() : 'all';
+    const softVal = softSkillFilter ? softSkillFilter.value.toLowerCase() : 'all';
 
     projectCards.forEach(card => {
-        // Grab the hidden data attributes we added to the HTML
+        // Read the hidden data-attributes we added to the HTML
         const cardFields = (card.getAttribute('data-field') || '').toLowerCase();
         const cardHard = (card.getAttribute('data-hardskill') || '').toLowerCase();
         const cardSoft = (card.getAttribute('data-softskill') || '').toLowerCase();
 
-        // Check if the card matches the dropdown (or if dropdown is set to 'all')
+        // Check if the card matches the dropdown (or if dropdown is set to 'All')
         const matchField = fieldVal === 'all' || cardFields.includes(fieldVal);
         const matchHard = hardVal === 'all' || cardHard.includes(hardVal);
         const matchSoft = softVal === 'all' || cardSoft.includes(softVal);
 
-        // If it matches ALL active dropdowns, show it. Otherwise, hide it.
+        // ONLY show the project if it matches ALL active dropdown filters
         if (matchField && matchHard && matchSoft) {
             card.style.display = 'block';
         } else {
@@ -67,24 +70,28 @@ function filterProjects() {
     });
 }
 
-// Listen for changes on any of the three dropdowns
+// Listen for clicks/changes on the dropdowns
 if (fieldFilter && hardSkillFilter && softSkillFilter) {
     fieldFilter.addEventListener('change', filterProjects);
     hardSkillFilter.addEventListener('change', filterProjects);
     softSkillFilter.addEventListener('change', filterProjects);
 }
 
-// Theme Toggle Logic
+// ==========================================
+// 3. Theme Toggle Logic
+// ==========================================
 const themeToggle = document.querySelector('.theme-toggle');
 const body = document.body;
 
-themeToggle.addEventListener('click', () => {
-    body.classList.toggle('light-mode');
-    
-    // Switch the icon
-    if (body.classList.contains('light-mode')) {
-        themeToggle.textContent = '🌙'; // Shows Moon when in Light Mode
-    } else {
-        themeToggle.textContent = '☀️'; // Shows Sun when in Dark Mode
-    }
-});
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('light-mode');
+        
+        // Switch the icon
+        if (body.classList.contains('light-mode')) {
+            themeToggle.textContent = '🌙'; // Shows Moon when in Light Mode
+        } else {
+            themeToggle.textContent = '☀️'; // Shows Sun when in Dark Mode
+        }
+    });
+}
