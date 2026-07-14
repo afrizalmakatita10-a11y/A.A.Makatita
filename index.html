@@ -100,30 +100,60 @@
             <section id="project-hub" class="projects">
                 <h2>Explore My Work</h2>
                 
-                <div class="filter-tabs">
-                    <button class="tab active" data-filter="all">All</button>
-                    <button class="tab" data-filter="legal">Legal Data Analyst</button>
-                    <button class="tab" data-filter="business">Business / Ops Analyst</button>
-                    <button class="tab" data-filter="governance">Data Gov & Privacy</button>
-                    <button class="tab" data-filter="general">General Data Analyst</button>
+                <div class="filters-container">
+                    <div class="filter-group">
+                        <label for="field-filter">Field</label>
+                        <select id="field-filter" class="filter-dropdown">
+                            <option value="all">All Fields</option>
+                            <option value="legal">Legal Data Analyst</option>
+                            <option value="business">Business / Ops Analyst</option>
+                            <option value="governance">Data Gov & Privacy</option>
+                            <option value="general">General Data Analyst</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="hard-skill-filter">Hard Skill</label>
+                        <select id="hard-skill-filter" class="filter-dropdown">
+                            <option value="all">All Hard Skills</option>
+                            <option value="python">Python</option>
+                            <option value="sql">SQL / BigQuery</option>
+                            <option value="tableau">Tableau</option>
+                            <option value="spreadsheets">Spreadsheets</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-group">
+                        <label for="soft-skill-filter">Soft Skill</label>
+                        <select id="soft-skill-filter" class="filter-dropdown">
+                            <option value="all">All Soft Skills</option>
+                            <option value="analytical thinking">Analytical Thinking</option>
+                            <option value="data analytics">Data Analytics</option>
+                            <option value="business acumen">Business Acumen</option>
+                            <option value="strategic planning">Strategic Planning</option>
+                            <option value="data storytelling">Data Storytelling</option>
+                        </select>
+                    </div>
                 </div>
 
                 <div class="project-grid">
 
-                    <article class="project-card" data-category="business general">
+                    <article class="project-card" data-field="business general" data-hardskill="python tableau data cleaning" data-softskill="analytical thinking data analytics business acumen">
                         <div class="project-content">
                             <h3>Shopee TH eCommerce Performance Analysis</h3>
                             <ul class="project-bullets">
-                                <li>Investigated a 20% revenue leakage (over ฿800 Million) driven by order cancellations.</li>
-                                <li>Prepared data using <strong>Python</strong> and visualized trends in <strong>Tableau</strong>.</li>
-                                <li>Formulated recommendations to reduce cancellation losses to 10% by 2028.</li>
+                                <li>Investigated a 20% revenue leakage (over ฿800 Million) driven by order cancellations to identify baseline trends and high-density risk segments.</li>
+                                <li>Performed end-to-end data preparation using <strong>Python</strong> and visualized findings in a <strong>Tableau</strong> dashboard.</li>
+                                <li>Formulated actionable recommendations aiming to reduce cancellation losses to 10% by 2028.</li>
                             </ul>
                             
                             <div class="skill-pills">
                                 <span class="pill filter-pill">Business / Ops Analyst</span>
-                                <span class="pill filter-pill">General Data Analyst</span>
                                 <span class="pill tool-pill">Python</span>
                                 <span class="pill tool-pill">Tableau</span>
+                                <span class="pill soft-pill">Analytical Thinking</span>
+                                <span class="pill soft-pill">Data Analytics</span>
+                                <span class="pill soft-pill">Business Acumen</span>
                             </div>
 
                             <div class="project-links">
@@ -132,25 +162,66 @@
                         </div>
                     </article>
 
-                    <article class="project-card" data-category="business general">
+                    <article class="project-card" data-field="business general" data-hardskill="sql bigquery spreadsheets cohort analysis" data-softskill="data analytics">
                         <div class="project-content">
                             <h3>TheLook eCommerce Performance & Retention</h3>
                             <ul class="project-bullets">
-                                <li>Diagnosed a system-wide inventory drop exceeding 50% across all categories.</li>
-                                <li>Developed advanced SQL queries in <strong>BigQuery</strong> to trace customer purchase lifecycles.</li>
-                                <li>Constructed a user cohort matrix in <strong>Spreadsheets</strong> to highlight inventory gaps.</li>
+                                <li>Evaluated the impact of budget optimization on inventory levels, diagnosing a system-wide inventory drop exceeding 50%.</li>
+                                <li>Developed advanced SQL queries utilizing CTEs and Window Functions in <strong>BigQuery</strong> to calculate monthly inventory growth.</li>
+                                <li>Constructed a user cohort matrix in <strong>Spreadsheets</strong> to highlight critical gaps between high demand and low stock.</li>
                             </ul>
                             
                             <div class="skill-pills">
                                 <span class="pill filter-pill">Business / Ops Analyst</span>
-                                <span class="pill filter-pill">General Data Analyst</span>
-                                <span class="pill tool-pill">SQL</span>
-                                <span class="pill tool-pill">BigQuery</span>
+                                <span class="pill tool-pill">SQL (BigQuery)</span>
                                 <span class="pill tool-pill">Spreadsheets</span>
+                                <span class="pill soft-pill">Data Analytics</span>
                             </div>
 
                             <div class="project-links">
                                 <a href="thelook-presentation.pdf" target="_blank" class="btn-primary">View Presentation</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-field="general business" data-hardskill="sql postgresql data modeling" data-softskill="analytical thinking">
+                        <div class="project-content">
+                            <h3>Advanced SQL Performance & Cohort Analysis</h3>
+                            <ul class="project-bullets">
+                                <li>Engineered highly optimized database queries using complex <strong>CTEs, Subqueries, and Window Functions</strong>.</li>
+                                <li>Designed an automated data pipeline framework to aggregate user transaction histories, enabling real-time RFM segmentation.</li>
+                            </ul>
+                            
+                            <div class="skill-pills">
+                                <span class="pill filter-pill">General Data Analyst</span>
+                                <span class="pill tool-pill">Advanced SQL</span>
+                                <span class="pill tool-pill">Data Modeling</span>
+                                <span class="pill soft-pill">Analytical Thinking</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="SQL_Afrizal_Makatita_Advanced.pdf" target="_blank" class="btn-primary">View Presentation</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="project-card" data-field="business general legal" data-hardskill="spreadsheets" data-softskill="strategic planning data storytelling">
+                        <div class="project-content">
+                            <h3>Strategic Business Deep Dive Analytics</h3>
+                            <ul class="project-bullets">
+                                <li>Spearheaded a comprehensive deep-dive diagnostic on core business metrics to uncover hidden bottlenecks.</li>
+                                <li>Leveraged advanced <strong>Spreadsheets</strong> and visual storytelling to map multi-variable data points against compliance KPIs.</li>
+                            </ul>
+                            
+                            <div class="skill-pills">
+                                <span class="pill filter-pill">Business / Ops Analyst</span>
+                                <span class="pill tool-pill">Spreadsheets</span>
+                                <span class="pill soft-pill">Strategic Planning</span>
+                                <span class="pill soft-pill">Data Storytelling</span>
+                            </div>
+
+                            <div class="project-links">
+                                <a href="Deep_GSlide_Final.pdf" target="_blank" class="btn-primary">View Presentation</a>
                             </div>
                         </div>
                     </article>
