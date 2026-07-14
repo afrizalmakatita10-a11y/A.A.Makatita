@@ -281,24 +281,6 @@ body {
     margin-bottom: 2rem;
 }
 
-.filter-tabs {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 3rem;
-}
-
-.tab {
-    background: var(--surface-color);
-    color: var(--text-main);
-    border: none;
-    padding: 0.75rem 1.5rem;
-    border-radius: 30px;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: 500;
-}
-
 .tab:hover, .tab.active {
     background: var(--accent-color);
     color: var(--bg-color);
@@ -427,6 +409,70 @@ body {
 .btn-primary:hover {
     background-color: var(--accent-color);
     color: var(--bg-color);
+}
+
+/* NEW: Dropdown Filter Dashboard Styling */
+.filters-container {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+    background-color: var(--surface-color);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 229, 255, 0.1);
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.filter-group label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-dropdown {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    border: 1px solid rgba(0, 229, 255, 0.2);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 0.95rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.filter-dropdown:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(0, 229, 255, 0.2);
+}
+
+.filter-dropdown option {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+}
+
+/* Light Mode Support for Dropdowns */
+.light-mode .filters-container {
+    border: 1px solid rgba(9, 132, 227, 0.1);
+}
+
+.light-mode .filter-dropdown {
+    border: 1px solid rgba(9, 132, 227, 0.2);
+}
+
+.light-mode .filter-dropdown:focus {
+    box-shadow: 0 0 0 2px rgba(9, 132, 227, 0.2);
 }
 
 /* Mobile Safety Net */
