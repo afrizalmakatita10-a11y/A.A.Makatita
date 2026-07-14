@@ -36,31 +36,43 @@ links.forEach(link => {
 const tabs = document.querySelectorAll('.tab');
 const projectCards = document.querySelectorAll('.project-card');
 
-tabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        // Remove active class from all tabs
-        tabs.forEach(t => t.classList.remove('active'));
-        // Add active class to clicked tab
-        tab.classList.add('active');
+// Multi-Dropdown Filtering Logic
+const fieldFilter = document.getElementById('field-filter');
+const hardSkillFilter = document.getElementById('hard-skill-filter');
+const softSkillFilter = document.getElementById('soft-skill-filter');
+const projectCards = document.querySelectorAll('.project-card');
 
-        const filterValue = tab.getAttribute('data-filter');
+function filterProjects() {
+    const fieldVal = fieldFilter.value.toLowerCase();
+    const hardVal = hardSkillFilter.value.toLowerCase();
+    const softVal = softSkillFilter.value.toLowerCase();
 
-        projectCards.forEach(card => {
-            // If the filter is 'all', show everything
-            if (filterValue === 'all') {
-                card.style.display = 'block';
-            } else {
-                // Check if the card's data-category includes the filter value
-                const categories = card.getAttribute('data-category').split(' ');
-                if (categories.includes(filterValue)) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            }
-        });
+    projectCards.forEach(card => {
+        // Grab the hidden data attributes we added to the HTML
+        const cardFields = (card.getAttribute('data-field') || '').toLowerCase();
+        const cardHard = (card.getAttribute('data-hardskill') || '').toLowerCase();
+        const cardSoft = (card.getAttribute('data-softskill') || '').toLowerCase();
+
+        // Check if the card matches the dropdown (or if dropdown is set to 'all')
+        const matchField = fieldVal === 'all' || cardFields.includes(fieldVal);
+        const matchHard = hardVal === 'all' || cardHard.includes(hardVal);
+        const matchSoft = softVal === 'all' || cardSoft.includes(softVal);
+
+        // If it matches ALL active dropdowns, show it. Otherwise, hide it.
+        if (matchField && matchHard && matchSoft) {
+            card.style.display = 'block';
+        } else {
+            card.style.display = 'none';
+        }
     });
-});
+}
+
+// Listen for changes on any of the three dropdowns
+if (fieldFilter && hardSkillFilter && softSkillFilter) {
+    fieldFilter.addEventListener('change', filterProjects);
+    hardSkillFilter.addEventListener('change', filterProjects);
+    softSkillFilter.addEventListener('change', filterProjects);
+}
 
 // Theme Toggle Logic
 const themeToggle = document.querySelector('.theme-toggle');
