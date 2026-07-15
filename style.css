@@ -1,28 +1,28 @@
 /* ==========================================
-   HIGH-CONTRAST MONOCHROME THEME
+   EXECUTIVE GOLD & CHARCOAL THEME
    ========================================== */
 :root {
     /* Core Layout Colors */
-    --bg-color: #2D2D30;          /* Medium-dark cool gray background */
-    --surface-color: #1E1E1E;     /* Deep charcoal for panels/cards */
-    --text-main: #F5F5F5;         /* Crisp off-white for primary text */
-    --text-muted: #B0B0B0;        /* Light silver for secondary text */
-    --accent-color: #FFFFFF;      /* Pure white for emphasis */
+    --bg-color: #000000;          /* Pure black background */
+    --surface-color: #292929;     /* Dark charcoal panels and cards */
+    --text-main: #FFFFFF;         /* Pure white for headings and strong text */
+    --text-muted: #F8F8F8;        /* Soft off-white for readability */
+    --accent-color: #FFD700;      /* Prestige Gold for emphasis */
     
-    /* 1. Filter Pills (Roles) - Solid White (Max Contrast) */
-    --pill-filter-text: #121212;
-    --pill-filter-bg: #FFFFFF;
-    --pill-filter-border: #FFFFFF;
+    /* 1. Filter Pills (Roles) - Solid Gold */
+    --pill-filter-text: #000000;
+    --pill-filter-bg: #FFD700;
+    --pill-filter-border: #FFD700;
 
-    /* 2. Tool Pills (Hard Skills) - Solid Silver */
-    --pill-tool-text: #121212;
-    --pill-tool-bg: #B0B0B0;
-    --pill-tool-border: #B0B0B0;
+    /* 2. Tool Pills (Hard Skills) - Mid Gray */
+    --pill-tool-text: #FFFFFF;
+    --pill-tool-bg: #505050;
+    --pill-tool-border: #505050;
 
-    /* 3. Soft Skill Pills - Stark White Outline */
-    --pill-soft-text: #FFFFFF;
+    /* 3. Soft Skill Pills - Off-White Outline */
+    --pill-soft-text: #F8F8F8;
     --pill-soft-bg: transparent;
-    --pill-soft-border: #FFFFFF;
+    --pill-soft-border: #F8F8F8;
 }
 
 /* Reset & Base Styles */
@@ -59,8 +59,8 @@ body {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    border-right: 1px solid rgba(255, 255, 255, 0.1); 
-    box-shadow: 5px 0 15px rgba(0,0,0,0.3); 
+    border-right: 1px solid #505050; /* Mid-gray separator */
+    box-shadow: 5px 0 15px rgba(0,0,0,0.5); 
     z-index: 10;
 }
 
@@ -83,7 +83,7 @@ body {
     height: 240px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #FFFFFF; /* Brighter border */
+    border: 3px solid var(--accent-color); /* Gold ring around photo */
 }
 
 .logo {
@@ -110,6 +110,7 @@ body {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.7;
+    opacity: 0.85; /* Softens the off-white slightly for paragraph text */
 }
 
 .education-section, .skills-section {
@@ -124,7 +125,7 @@ body {
     color: var(--text-main);
     text-transform: uppercase;
     letter-spacing: 1px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid #505050;
     padding-bottom: 0.5rem;
 }
 
@@ -137,12 +138,13 @@ body {
 .edu-item p {
     font-size: 0.85rem;
     color: var(--text-muted);
+    opacity: 0.85;
 }
 
 .edu-item .edu-date {
     font-size: 0.8rem;
-    color: var(--text-muted);
-    font-weight: 500;
+    color: var(--accent-color); /* Gold dates */
+    font-weight: 600;
 }
 
 .skill-category h4 {
@@ -182,14 +184,14 @@ body {
     width: 20px;
 }
 
-/* SOLID BUTTON STYLE */
+/* EXECUTIVE BUTTON STYLE */
 .btn-primary {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background-color: #333333; 
-    color: #FFFFFF; 
+    background-color: var(--bg-color); /* Black background */
+    color: var(--accent-color);        /* Gold text */
     text-decoration: none;
-    border: 1px solid #777777; 
+    border: 1px solid var(--accent-color); /* Gold border */
     border-radius: 6px;
     font-weight: 600;
     transition: all 0.3s ease;
@@ -198,10 +200,10 @@ body {
 }
 
 .btn-primary:hover {
-    background-color: #FFFFFF; 
-    color: #121212; 
-    border-color: #FFFFFF;
+    background-color: var(--accent-color); /* Flips to Gold background */
+    color: #000000;                        /* Black text on hover */
     transform: translateY(-2px); 
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.2); /* Subtle gold glow */
 }
 
 /* ==========================================
@@ -218,7 +220,7 @@ body {
     margin-bottom: 2.5rem;
     letter-spacing: -1.5px;
     line-height: 1.1;
-    color: var(--text-muted);
+    color: #505050;
 }
 
 .projects h2 span {
@@ -233,8 +235,8 @@ body {
     background-color: var(--surface-color);
     padding: 1.5rem;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border: 1px solid #505050;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.5);
 }
 
 .filter-group {
@@ -256,7 +258,7 @@ body {
 .filter-dropdown {
     background-color: var(--bg-color);
     color: var(--text-main);
-    border: 1px solid rgba(255, 255, 255, 0.3); 
+    border: 1px solid #505050; 
     padding: 0.75rem 1rem;
     border-radius: 6px;
     font-family: inherit;
@@ -268,7 +270,7 @@ body {
 
 .filter-dropdown:focus {
     border-color: var(--accent-color);
-    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 0 2px rgba(255, 215, 0, 0.2);
 }
 
 .filter-dropdown option {
@@ -284,17 +286,17 @@ body {
 
 .project-card {
     background-color: var(--surface-color);
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Sharper borders on cards */
+    border: 1px solid #505050; 
     border-radius: 12px;
     padding: 2rem;
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2); 
+    box-shadow: 0 4px 10px rgba(0,0,0,0.5); 
 }
 
 .project-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.5); 
-    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    border-color: var(--accent-color); /* Gold border on hover */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
 }
 
 .project-card h3 {
@@ -309,6 +311,7 @@ body {
     color: var(--text-muted);
     font-size: 0.95rem;
     line-height: 1.6;
+    opacity: 0.9;
 }
 
 .project-bullets strong {
@@ -331,7 +334,7 @@ body {
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
-    font-weight: 600; /* Made font bolder for contrast */
+    font-weight: 600; 
 }
 
 .filter-pill {
@@ -365,7 +368,7 @@ body {
     .left-panel {
         height: auto;
         border-right: none;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid #505050;
         box-shadow: none;
     }
     
