@@ -154,19 +154,20 @@
                                 <span class="pill soft-pill">Business Acumen</span>
                             </div>
 
-                            <!-- NEW: Project Image Thumbnails -->
+                            <!-- Thumbnails Reordered: Slide, Dashboard, Python -->
                             <div class="project-thumbnails">
-                                <a href="DEEP Python.png" target="_blank" class="thumbnail-link" title="View Full Python Code">
-                                    <img src="DEEP Python.png" alt="Python Preview" class="project-thumbnail">
-                                </a>
-                                <a href="DEEP Dashboard.png" target="_blank" class="thumbnail-link" title="View Full Dashboard">
-                                    <img src="DEEP Dashboard.png" alt="Dashboard Preview" class="project-thumbnail">
-                                </a>
-                                <a href="DEEP Slide.png" target="_blank" class="thumbnail-link" title="View Full Slide">
-                                    <img src="DEEP Slide.png" alt="Slide Preview" class="project-thumbnail">
-                                </a>
+                                <div class="thumbnail-wrapper" title="Click to enlarge Slide">
+                                    <img src="DEEP Slide.png" alt="Slide Preview" class="project-thumbnail clickable-thumbnail">
+                                </div>
+                                <div class="thumbnail-wrapper" title="Click to enlarge Dashboard">
+                                    <img src="DEEP Dashboard.png" alt="Dashboard Preview" class="project-thumbnail clickable-thumbnail">
+                                </div>
+                                <div class="thumbnail-wrapper" title="Click to enlarge Python Code">
+                                    <img src="DEEP Python.png" alt="Python Preview" class="project-thumbnail clickable-thumbnail">
+                                </div>
                             </div>
 
+                            <!-- Buttons match the Thumbnail sequence exactly -->
                             <div class="project-links" style="display: flex; gap: 1rem; flex-wrap: wrap;">
                                 <a href="shopee-presentation.pdf" target="_blank" class="btn-primary">View Presentation</a>
                                 <a href="https://public.tableau.com/app/profile/afrizal.makatita/viz/DEEP_Dahsboard__DEEP_2/Dashboard1?publish=yes" target="_blank" class="btn-primary">View Dashboard</a>
@@ -202,6 +203,12 @@
                 </div>
             </section>
         </main>
+    </div>
+
+    <!-- Image Modal for Full Size Viewing -->
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-img">
     </div>
 
     <script src="script.js"></script>
