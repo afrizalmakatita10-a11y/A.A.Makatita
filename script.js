@@ -34,3 +34,33 @@ if (fieldFilter && hardSkillFilter && softSkillFilter) {
     hardSkillFilter.addEventListener('change', filterProjects);
     softSkillFilter.addEventListener('change', filterProjects);
 }
+
+// ==========================================
+// Lightbox / Image Modal Engine
+// ==========================================
+const modal = document.getElementById("image-modal");
+const modalImg = document.getElementById("modal-img");
+const closeModal = document.querySelector(".close-modal");
+const thumbnails = document.querySelectorAll(".clickable-thumbnail");
+
+// Open modal on thumbnail click
+thumbnails.forEach(thumb => {
+    thumb.addEventListener('click', function() {
+        modal.style.display = "block";
+        modalImg.src = this.src; 
+    });
+});
+
+// Close modal on 'X' click
+if (closeModal) {
+    closeModal.addEventListener('click', function() {
+        modal.style.display = "none";
+    });
+}
+
+// Close modal when clicking anywhere outside the image
+window.addEventListener('click', function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+});
