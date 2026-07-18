@@ -3,23 +3,23 @@
    ========================================== */
 :root {
     /* Core Layout Colors */
-    --bg-color: #2D2D30;          /* Medium-dark cool gray background */
-    --surface-color: #1E1E1E;     /* Deep charcoal for panels/cards */
-    --text-main: #F5F5F5;         /* Crisp off-white for primary text */
-    --text-muted: #B0B0B0;        /* Light silver for secondary text */
-    --accent-color: #FFFFFF;      /* Pure white for emphasis */
+    --bg-color: #2D2D30;          
+    --surface-color: #1E1E1E;     
+    --text-main: #F5F5F5;         
+    --text-muted: #B0B0B0;        
+    --accent-color: #FFFFFF;      
     
-    /* 1. Filter Pills (Roles) - Solid White (Max Contrast) */
+    /* 1. Filter Pills (Roles) */
     --pill-filter-text: #121212;
     --pill-filter-bg: #FFFFFF;
     --pill-filter-border: #FFFFFF;
 
-    /* 2. Tool Pills (Hard Skills) - Solid Silver */
+    /* 2. Tool Pills (Hard Skills) */
     --pill-tool-text: #121212;
     --pill-tool-bg: #B0B0B0;
     --pill-tool-border: #B0B0B0;
 
-    /* 3. Soft Skill Pills - Stark White Outline */
+    /* 3. Soft Skill Pills */
     --pill-soft-text: #FFFFFF;
     --pill-soft-bg: transparent;
     --pill-soft-border: #FFFFFF;
@@ -49,7 +49,7 @@ body {
 }
 
 /* ==========================================
-   LEFT PANEL (PROFILE)
+   LEFT PANEL (PROFILE CENTERED)
    ========================================== */
 .left-panel {
     background-color: var(--surface-color);
@@ -72,10 +72,14 @@ body {
     scrollbar-width: none;
 }
 
+.profile-header-container {
+    width: 100%;
+}
+
 .profile-header {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
 .profile-img {
@@ -83,13 +87,16 @@ body {
     height: 240px;
     border-radius: 50%;
     object-fit: cover;
-    border: 3px solid #FFFFFF; /* Brighter border */
+    border: 3px solid #FFFFFF; 
+    display: block;
+    margin: 0 auto;
 }
 
 .logo {
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .logo span {
@@ -100,6 +107,7 @@ body {
     font-size: 1.4rem;
     line-height: 1.3;
     font-weight: 600;
+    text-align: center;
 }
 
 .accent-text {
@@ -284,7 +292,7 @@ body {
 
 .project-card {
     background-color: var(--surface-color);
-    border: 1px solid rgba(255, 255, 255, 0.15); /* Sharper borders on cards */
+    border: 1px solid rgba(255, 255, 255, 0.15); 
     border-radius: 12px;
     padding: 2rem;
     transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s;
@@ -331,7 +339,7 @@ body {
     padding: 0.4rem 0.8rem;
     border-radius: 20px;
     font-size: 0.8rem;
-    font-weight: 600; /* Made font bolder for contrast */
+    font-weight: 600; 
 }
 
 .filter-pill {
@@ -372,7 +380,7 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.2);
     transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
     background-color: var(--bg-color);
-    cursor: pointer; /* Makes it clear it can be clicked */
+    cursor: pointer; 
 }
 
 .thumbnail-wrapper:hover {
@@ -395,7 +403,7 @@ body {
 }
 
 /* ==========================================
-   IMAGE MODAL / LIGHTBOX
+   IMAGE MODAL / LIGHTBOX (HD PREVIEW)
    ========================================== */
 .modal {
     display: none; 
@@ -406,17 +414,18 @@ body {
     top: 0;
     width: 100%; 
     height: 100%; 
-    background-color: rgba(0,0,0,0.9); /* Dark overlay */
-    backdrop-filter: blur(5px);
+    background-color: rgba(0,0,0,0.92); 
+    backdrop-filter: blur(6px);
 }
 
 .modal-content {
     margin: auto;
     display: block;
-    max-width: 90%;
+    max-width: 92%;
     max-height: 85vh;
     border-radius: 8px;
-    box-shadow: 0 0 20px rgba(255,255,255,0.1);
+    box-shadow: 0 0 25px rgba(255,255,255,0.15);
+    object-fit: contain; /* Mempertahankan rasio aspek gambar resolusi tinggi */
     animation: zoomIn 0.3s ease;
 }
 
@@ -425,20 +434,18 @@ body {
     top: 20px;
     right: 35px;
     color: #f1f1f1;
-    font-size: 40px;
+    font-size: 44px;
     font-weight: bold;
     cursor: pointer;
-    transition: 0.3s;
+    transition: color 0.3s;
 }
 
-.close-modal:hover,
-.close-modal:focus {
+.close-modal:hover {
     color: #bbb;
-    text-decoration: none;
 }
 
 @keyframes zoomIn {
-    from {transform: scale(0.95); opacity: 0;}
+    from {transform: scale(0.96); opacity: 0;}
     to {transform: scale(1); opacity: 1;}
 }
 
