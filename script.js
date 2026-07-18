@@ -43,7 +43,7 @@ const modalImg = document.getElementById("modal-img");
 const closeModal = document.querySelector(".close-modal");
 const thumbnails = document.querySelectorAll(".clickable-thumbnail");
 
-// Membuka modal saat thumbnail diklik
+// Open modal on thumbnail click
 thumbnails.forEach(thumb => {
     thumb.addEventListener('click', function() {
         modal.style.display = "block";
@@ -51,14 +51,14 @@ thumbnails.forEach(thumb => {
     });
 });
 
-// Menutup modal saat tombol 'X' diklik
+// Close modal on 'X' click
 if (closeModal) {
     closeModal.addEventListener('click', function() {
         modal.style.display = "none";
     });
 }
 
-// Menutup modal otomatis jika area luar gambar diklik
+// Close modal when clicking anywhere outside the image
 window.addEventListener('click', function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
