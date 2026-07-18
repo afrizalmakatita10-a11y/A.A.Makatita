@@ -10,14 +10,17 @@
 <body>
     <div class="layout-container">
         
-      <aside class="left-panel">
-            <div class="profile-header-container">
-                <div class="profile-header">
+        <aside class="left-panel">
+            <div style="position: relative; width: 100%; margin-bottom: 2rem;">
+                <div style="width: 100%; height: 160px; border-radius: 12px; overflow: hidden; border: 1px solid var(--color-steel);">
+                    <img src="banner.png" alt="Profile Banner" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div style="margin-top: -80px; position: relative; z-index: 2;">
                     <img src="Foto Website.png" alt="Afrizal Makatita" class="profile-img">
                 </div>
             </div>
 
-           <h1 class="logo">Afrizal Anshari Makatita</h1>
+            <h1 class="logo">Afrizal Anshari Makatita</h1>
             
             <h2 class="slogan" style="color: var(--text-muted);">
                 Bridging the Gap Between <br>
@@ -59,7 +62,7 @@
                 </div>
             </div>
           
-          <div class="education-section">
+            <div class="education-section">
                 <h3 class="section-title">Education & Training</h3>
                 
                 <div class="edu-item">
@@ -95,11 +98,6 @@
         </aside>
         
         <main class="right-panel">
-            
-            <div class="right-header" style="display: flex; justify-content: flex-end; margin-bottom: 2rem;">
-                
-            </div>
-
             <section id="project-hub" class="projects">
                 <h2>Explore My Projects</h2>
                 
@@ -149,3 +147,50 @@
                                 <li>Performed end-to-end data preparation using <strong>Python</strong> and visualized findings in a <strong>Tableau</strong> dashboard.</li>
                                 <li>Formulated actionable recommendations aiming to reduce cancellation losses to 10% by 2028.</li>
                             </ul>
+                            
+                            <div class="skill-pills">
+                                <span class="pill filter-pill">Business / Ops Analyst</span>
+                                <span class="pill tool-pill">Python</span>
+                                <span class="pill tool-pill">Tableau</span>
+                                <span class="pill soft-pill">Analytical Thinking</span>
+                                <span class="pill soft-pill">Data Analytics</span>
+                                <span class="pill soft-pill">Business Acumen</span>
+                            </div>
+
+                            <div class="project-thumbnails">
+                                <div class="thumbnail-wrapper" title="Click to enlarge Project Summary">
+                                    <img src="[Portofolio]DEEP Project Summary.png" alt="Project Summary Preview" class="project-thumbnail clickable-thumbnail">
+                                </div>
+                                <div class="thumbnail-wrapper" title="Click to enlarge Slide Preview">
+                                    <img src="DEEP Slide.png" alt="Slide Preview" class="project-thumbnail clickable-thumbnail">
+                                </div>
+                                <div class="thumbnail-wrapper" title="Click to enlarge Dashboard Preview">
+                                    <img src="DEEP Dashboard.png" alt="Dashboard Preview" class="project-thumbnail clickable-thumbnail">
+                                </div>
+                                <div class="thumbnail-wrapper" title="Click to enlarge Python Code Preview">
+                                    <img src="DEEP Python.png" alt="Python Preview" class="project-thumbnail clickable-thumbnail">
+                                </div>
+                            </div>
+
+                            <div class="project-links" style="display: flex; gap: 1rem; flex-wrap: wrap;">
+                                <a href="[Portofolio]DEEP Project Summary.png" target="_blank" class="btn-primary">View Summary</a>
+                                <a href="https://docs.google.com/presentation/d/1_n3-52DWWstm4Y9EZ9XKTkLz8sEnUuin/edit?slide=id.g3f55504fcf8_0_45#slide=id.g3f55504fcf8_0_45" target="_blank" class="btn-primary">View Presentation</a>
+                                <a href="https://public.tableau.com/app/profile/afrizal.makatita/viz/DEEP_Dahsboard__DEEP_2/Dashboard1?publish=yes" target="_blank" class="btn-primary">View Dashboard</a>
+                                <a href="https://colab.research.google.com/drive/10X53N4BF9qlOSX3jsvKni3KwEyWV5ArI#scrollTo=jFy_abnERcMj" target="_blank" class="btn-primary">View Python</a>
+                            </div>
+                        </div>
+                    </article>
+
+</div>
+            </section>
+        </main>
+    </div>
+
+    <div id="image-modal" class="modal">
+        <span class="close-modal">&times;</span>
+        <img class="modal-content" id="modal-img">
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
